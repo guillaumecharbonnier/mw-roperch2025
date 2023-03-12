@@ -1,0 +1,23 @@
+name: jupyter_rkernel_diff_meth
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python =3.8
+  - jupyter =1.0
+  - jupyterlab_code_formatter =1.4
+  - r-irkernel
+  - r-ggpubr
+  - r-data.table
+  - r-tidyr
+  - r-factoextra
+  - bioconductor-bsseq
+  - bioconductor-methylsig
+  - bioconductor-dss
+  - bioconductor-methylkit
+  - bioconductor-chippeakanno
+  - r-openxlsx
+  - r-stringr
+  - umap-learn
+  - r-umap

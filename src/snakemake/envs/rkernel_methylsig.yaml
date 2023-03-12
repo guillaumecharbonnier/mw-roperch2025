@@ -1,0 +1,14 @@
+name: rkernel_methylsig
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - r-irkernel
+  - r-ggpubr
+  - r-data.table
+  - r-tidyr
+  - bioconductor-bsseq
+  - bioconductor-methylsig
+  - r-openxlsx
+  - r-stringr

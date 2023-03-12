@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <link href="https://igv.org/web/img/favicon.ico" rel="shortcut icon" />
+    <title>igv.js</title>
+  </head>
+
+  <body>
+    <h3>Methyl-Seq results</h3>
+    <p>Methylation levels are displayed as percentage of methylation. Each dot corresponds to a cytosine followed by a guanine with sufficient coverage to get a methylation call. Blue dots correspond to healthy tissue while the reds dots correspond to tumoral ones.</p>
+
+    <div
+      id="igvDiv"
+      style="padding-top: 0px; padding-bottom: 0px; height: auto"
+    ></div>
+
+    <script type="module">
+
+      import igv from "https://cdn.jsdelivr.net/npm/igv@2.13.11/dist/igv.esm.min.js"
+
+      const options = {
+        locus: "CUX2",
+        genome: "hg19",
+        tracks: [
+          {
+            name: "ODG_080",
+            graphType: "points",
+            type: "merged",
+            height: 36,
+            max: 100,
+            tracks: [
+              {
+                type: "wig",
+                name: "ODG_080",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_080.markdup.sorted_CpG.bw",
+                color: "rgba(70, 130, 180,0.5)"
+              },
+              {
+                type: "wig",
+                name: "ODG_081",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_081.markdup.sorted_CpG.bw",
+                color: "rgba(255,36,0,0.5)"
+              }
+            ]
+          },
+          {
+            name: "ODG_082",
+            graphType: "points",
+            type: "merged",
+            height: 36,
+            max: 100,
+            tracks: [
+              {
+                type: "wig",
+                name: "ODG_082",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_082.markdup.sorted_CpG.bw",
+                color: "rgba(70, 130, 180,0.5)"
+              },
+              {
+                type: "wig",
+                name: "ODG_083",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_083.markdup.sorted_CpG.bw",
+                color: "rgba(255,36,0,0.5)"
+              }
+            ]
+          },
+          {
+            name: "ODG_084",
+            graphType: "points",
+            type: "merged",
+            height: 36,
+            max: 100,
+            tracks: [
+              {
+                type: "wig",
+                name: "ODG_084",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_084.markdup.sorted_CpG.bw",
+                color: "rgba(70, 130, 180,0.5)"
+              },
+              {
+                type: "wig",
+                name: "ODG_085",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_085.markdup.sorted_CpG.bw",
+                color: "rgba(255,36,0,0.5)"
+              }
+            ]
+          },
+          {
+            name: "ODG_086",
+            graphType: "points",
+            type: "merged",
+            height: 36,
+            max: 100,
+            tracks: [
+              {
+                type: "wig",
+                name: "ODG_086",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_086.markdup.sorted_CpG.bw",
+                color: "rgba(70, 130, 180,0.5)"
+              },
+              {
+                type: "wig",
+                name: "ODG_087",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_087.markdup.sorted_CpG.bw",
+                color: "rgba(255,36,0,0.5)"
+              }
+            ]
+          },
+          {
+            name: "ODG_088",
+            graphType: "points",
+            type: "merged",
+            height: 36,
+            max: 100,
+            tracks: [
+              {
+                type: "wig",
+                name: "ODG_088",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_088.markdup.sorted_CpG.bw",
+                color: "rgba(70, 130, 180,0.5)"
+              },
+              {
+                type: "wig",
+                name: "ODG_089",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_089.markdup.sorted_CpG.bw",
+                color: "rgba(255,36,0,0.5)"
+              }
+            ]
+          },
+          {
+            name: "ODG_090",
+            graphType: "points",
+            type: "merged",
+            height: 36,
+            max: 100,
+            tracks: [
+              {
+                type: "wig",
+                name: "ODG_090",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_090.markdup.sorted_CpG.bw",
+                color: "rgba(70, 130, 180,0.5)"
+              },
+              {
+                type: "wig",
+                name: "ODG_091",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_091.markdup.sorted_CpG.bw",
+                color: "rgba(255,36,0,0.5)"
+              }
+            ]
+          },
+          {
+            name: "ODG_092",
+            graphType: "points",
+            type: "merged",
+            height: 36,
+            max: 100,
+            tracks: [
+              {
+                type: "wig",
+                name: "ODG_092",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_092.markdup.sorted_CpG.bw",
+                color: "rgba(70, 130, 180,0.5)"
+              },
+              {
+                type: "wig",
+                name: "ODG_093",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_093.markdup.sorted_CpG.bw",
+                color: "rgba(255,36,0,0.5)"
+              }
+            ]
+          },
+          {
+            name: "ODG_094",
+            graphType: "points",
+            type: "merged",
+            height: 36,
+            max: 100,
+            tracks: [
+              {
+                type: "wig",
+                name: "ODG_094",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_094.markdup.sorted_CpG.bw",
+                color: "rgba(70, 130, 180,0.5)"
+              },
+              {
+                type: "wig",
+                name: "ODG_095",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_095.markdup.sorted_CpG.bw",
+                color: "rgba(255,36,0,0.5)"
+              }
+            ]
+          },
+          {
+            name: "ODG_096",
+            graphType: "points",
+            type: "merged",
+            height: 36,
+            max: 100,
+            tracks: [
+              {
+                type: "wig",
+                name: "ODG_096",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_096.markdup.sorted_CpG.bw",
+                color: "rgba(70, 130, 180,0.5)"
+              },
+              {
+                type: "wig",
+                name: "ODG_097",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_097.markdup.sorted_CpG.bw",
+                color: "rgba(255,36,0,0.5)"
+              }
+            ]
+          },
+          {
+            name: "ODG_098",
+            graphType: "points",
+            type: "merged",
+            height: 36,
+            max: 100,
+            tracks: [
+              {
+                type: "wig",
+                name: "ODG_098",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_098.markdup.sorted_CpG.bw",
+                color: "rgba(70, 130, 180,0.5)"
+              },
+              {
+                type: "wig",
+                name: "ODG_099",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_099.markdup.sorted_CpG.bw",
+                color: "rgba(255,36,0,0.5)"
+              }
+            ]
+          },
+          {
+            name: "ODG_100",
+            graphType: "points",
+            type: "merged",
+            height: 36,
+            max: 100,
+            tracks: [
+              {
+                type: "wig",
+                name: "ODG_100",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_100.markdup.sorted_CpG.bw",
+                color: "rgba(70, 130, 180,0.5)"
+              },
+              {
+                type: "wig",
+                name: "ODG_101",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_101.markdup.sorted_CpG.bw",
+                color: "rgba(255,36,0,0.5)"
+              }
+            ]
+          },
+          {
+            name: "ODG_102",
+            graphType: "points",
+            type: "merged",
+            height: 36,
+            max: 100,
+            tracks: [
+              {
+                type: "wig",
+                name: "ODG_102",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_102.markdup.sorted_CpG.bw",
+                color: "rgba(70, 130, 180,0.5)"
+              },
+              {
+                type: "wig",
+                name: "ODG_103",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_103.markdup.sorted_CpG.bw",
+                color: "rgba(255,36,0,0.5)"
+              }
+            ]
+          },
+          {
+            name: "ODG_104",
+            graphType: "points",
+            type: "merged",
+            height: 36,
+            max: 100,
+            tracks: [
+              {
+                type: "wig",
+                name: "ODG_104",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_104.markdup.sorted_CpG.bw",
+                color: "rgba(70, 130, 180,0.5)"
+              },
+              {
+                type: "wig",
+                name: "ODG_105",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_105.markdup.sorted_CpG.bw",
+                color: "rgba(255,36,0,0.5)"
+              }
+            ]
+          },
+          {
+            name: "ODG_106",
+            graphType: "points",
+            type: "merged",
+            height: 36,
+            max: 100,
+            tracks: [
+              {
+                type: "wig",
+                name: "ODG_106",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_106.markdup.sorted_CpG.bw",
+                color: "rgba(70, 130, 180,0.5)"
+              },
+              {
+                type: "wig",
+                name: "ODG_107",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_107.markdup.sorted_CpG.bw",
+                color: "rgba(255,36,0,0.5)"
+              }
+            ]
+          },
+          {
+            name: "ODG_108",
+            graphType: "points",
+            type: "merged",
+            height: 36,
+            max: 100,
+            tracks: [
+              {
+                type: "wig",
+                name: "ODG_108",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_108.markdup.sorted_CpG.bw",
+                color: "rgba(70, 130, 180,0.5)"
+              },
+              {
+                type: "wig",
+                name: "ODG_109",
+                url: "mw-oncodiag-data/out/ucsc/bedGraphToBigWig_chrominfo-GRCh37/cut/_-f1-4/sort/bed/nextflow/nfcore_methylseq/methyldackel/ODG_109.markdup.sorted_CpG.bw",
+                color: "rgba(255,36,0,0.5)"
+              }
+            ]
+          },
+        ]
+      };
+
+      const igvDiv = document.getElementById("igvDiv");
+
+      igv.createBrowser(igvDiv, options)
+
+          .then(function (browser) {
+
+          });
+    </script>
+  </body>
+</html>

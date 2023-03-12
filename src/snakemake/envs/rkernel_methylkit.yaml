@@ -1,0 +1,13 @@
+name: rkernel_methylkit
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - r-irkernel
+  - r-ggpubr
+  - r-data.table
+  - r-tidyr
+  - bioconductor-methylkit
+  - r-openxlsx
+  - r-stringr

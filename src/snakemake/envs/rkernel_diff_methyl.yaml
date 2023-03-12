@@ -1,0 +1,20 @@
+name: rkernel_diff_meth
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - r-irkernel
+  - r-ggpubr
+  - r-data.table
+  - r-tidyr
+  - r-factoextra
+  - bioconductor-bsseq
+  - bioconductor-methylsig
+  - bioconductor-dss
+  - bioconductor-methylkit
+  - bioconductor-chippeakanno
+  - r-openxlsx
+  - r-stringr
+  - umap-learn
+  - r-umap

@@ -1,0 +1,21 @@
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    nf-core/methylseq Nextflow base config file
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    A 'blank slate' config file, appropriate for general use on most high performance
+    compute environments. Assumes that all software is installed and available on
+    the PATH. Runs in `local` mode - all jobs will be run on the logged in environment.
+----------------------------------------------------------------------------------------
+*/
+
+nextflow.enable.configProcessNamesValidation = false
+
+process {
+    time   = { 4.d }
+    
+    withName: "NFCORE_METHYLSEQ:METHYLSEQ:QUALIMAP_BAMQC" {
+        memory = 92.GB
+    }
+}
+
+
