@@ -1,0 +1,26 @@
+name: rkernel_diff_meth_v2
+# v2 after recompilation attempt on 2023-10-15
+# visualize_heatmap_differential_cg_by_gene.r.ipynb became slow on execution of the cell with packages loading
+# Also I want to move from chippeakanno to chipseeker for annotations
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - r-irkernel
+  - r-ggpubr
+  - r-data.table
+  - r-tidyr
+  - r-dplyr
+  # - r-factoextra
+  - bioconductor-bsseq
+  - bioconductor-dss
+  #- bioconductor-methylsig
+  # - bioconductor-methylkit
+  # - bioconductor-chippeakanno
+  - bioconductor-chipseeker
+  - bioconductor-org.hs.eg.db
+  - bioconductor-txdb.hsapiens.ucsc.hg19.knowngene
+  - bioconductor-complexheatmap
+  - r-openxlsx
+  - r-stringr

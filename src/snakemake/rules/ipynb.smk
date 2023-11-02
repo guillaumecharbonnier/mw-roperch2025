@@ -16,23 +16,25 @@ rule ipynb_index:
         expand(
             "out/ipynb/compute_differential_methylation/{design}.xlsx",
             design = [
-                "ODG_080",
-                "ODG_082",
-                # "ODG_084",
-                # "ODG_086",
-                # "ODG_088",
-                # "ODG_090",
-                # "ODG_092",
-                # "ODG_094",
-                # "ODG_096",
-                "ODG_098",
-                "ODG_100",
-                "ODG_102",
-                "ODG_104",
-                "ODG_106",
-                "ODG_108",
-                "dev_paired",
-                "dev_unpaired"
+        #         "ODG_080",
+        #         "ODG_082",
+        #         # "ODG_084",
+        #         # "ODG_086",
+        #         # "ODG_088",
+        #         # "ODG_090",
+        #         # "ODG_092",
+        #         # "ODG_094",
+        #         # "ODG_096",
+        #         "ODG_098",
+        #         "ODG_100",
+        #         "ODG_102",
+        #         "ODG_104",
+        #         "ODG_106",
+        #         "ODG_108",
+        #         # Currently bugged since the addition of top_dml_dmr_merge
+		# #"dev_paired",
+        #         "dev_unpaired"
+                "all_unpaired"
             ]
         )
     # output:
